@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2nd MONTHSARY</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+            perspective: 1000px;
+        }
+
+        .go-back {
+            position: absolute; 
+            top: 20px;
+            left: 20px;
+            color: #f0f0f0;
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            z-index: 100;
+        }
+        .go-back:hover {
+            background-color: #333;
+        }
+
+        .envelope-wrapper {
+            position: relative;
+            cursor: pointer;
+            width: 450px; 
+            height: 450px;
+            margin-top: 200px;
+        }
+        
+        .envelope {
+            position: absolute;
+            top: 0;
+            width: 450px;
+            height: 300px;
+            background-color: #e0b0b0; 
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .envelope::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-style: solid;
+            border-width: 150px 225px 0 225px; 
+            border-color: #a04040 transparent transparent transparent; 
+            transform-origin: top;
+            transition: transform 0.8s ease-in-out;
+            z-index: 2;
+        }
+
+        .envelope::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 150px;
+            border-style: solid;
+            border-width: 0 225px 150px 225px;
+            border-color: transparent transparent #c05050 transparent;
+            z-index: 1;
+        }
+
+        .letter {
+            position: absolute;
+            top: 150px;
+            left: 10px;
+            width: 430px;
+            height: 280px;
+            background-color: white;
+            color: #333;
+            padding: 15px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            z-index: 0;
+            transform: translateY(300px); 
+            transition: transform 0.8s ease-in-out 0.2s; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 1.1em;
+            text-align: center;
+            line-height: 1.5;
+        }
+        
+        .message-content {
+            opacity: 0;
+            transition: opacity 0.5s 0.8s; 
+            height: 100%;
+            overflow: auto;
+        }
+        .message-content h2 {
+            margin-top: 5px;
+            color: #a04040;
+        }
+
+        .envelope-wrapper.open .envelope::before {
+            transform: rotateX(180deg);
+            z-index: 0; 
+        }
+
+        .envelope-wrapper.open .letter {
+            transform: translateY(-300px);
+        }
+
+        .envelope-wrapper.open .message-content {
+            opacity: 1;
+        }
+
+        .click-text {
+            color: #aaa;
+            margin-top: 30px;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+    </style>
+    <script>
+        function openEnvelope() {
+            const wrapper = document.getElementById('envelopeWrapper');
+            const clickText = document.getElementById('clickText');
+            
+            if (!wrapper.classList.contains('open')) {
+                wrapper.classList.add('open');
+                clickText.textContent = "Oh My God! You Opened It!";
+            } 
+        }
+    </script>
+</head>
+<body>
+    <a href="MONTHSARY.html" class="go-back">← Go Back</a>
+
+    <div class="envelope-wrapper" id="envelopeWrapper" onclick="openEnvelope()">
+        <div class="envelope">
+            <div class="letter">
+                <div class="message-content">
+                    <h2>Happy 2nd Monthsary, Love</h2>
+                    <p>
+                        Hi Baby! I know na sinabi mo na hindi ko dapat ito ituloy, pero matigas ulo ko eh HAHAHAHA I'm sorry if nag-away tayo before our monthsary, hindi ko maiwasan na mangyari ito, so please forgive me. Happy 2nd Monthsary, Love! Babawi talaga ako sa'yo soon, I'm sorry dahil sakin naging ganyan sitwasyon mo. I promise gagawin ko lahat para mabawi yung pagod mo. When I heard you crying, that broke my heart. Gusto ko rin umiyak pero wala ako karapatan kasi ako dahilan kung bakit ganyan ka. Ayaw ko talaga na umalis sayo, gusto ko talaga na pagkatiwalaan mo mga ginagawa ko kasi alam ko naman na makakaya kolahat nang yan. You're my source of strength baby. You're the reason why I keep on moving forward. I still want to reach that dream where we're both happy. I'm not giving up on you baby, I'll save you from your miserable life. I will be the Man that will stand by your side no matter what the situation is. I miss you baby, I wish I could hug your problems away right now, but I can't. I love you so much baby! Again, Happy Monthsary ❤️
+                    </p>
+                    <p style="margin-top: 20px;">
+                        Forever yours,<br>
+                        Louis, Your Best Boyfriend.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="click-text" id="clickText">Click to open the message!</p>
+</body>
+</html>

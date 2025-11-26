@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>For my baby</title>
+        <style>
+            body {
+                background-color: black;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                min-height: 100vh;
+                flex-direction: column;
+                padding-top: 50px;
+            }
+            h2{
+                text-align: center;
+                border: 1px solid #ccc;
+                padding: 20px;
+                width: 80%;
+                max-width: 400px;
+                margin-top: 0;
+                margin-right: auto;
+                margin-left: auto;
+
+                background-color: #f0f0f0;
+                color: black;
+                border-radius: 10px;
+                animation: pop-up 1.5s ease-in-out forwards;
+            }
+            
+            @keyframes pop-up {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            img {
+                display: block;
+                width: 300px;
+                height: 300px;
+                animation: fadeIn 1.5s ease-in forwards;
+            }
+            @keyframes fadeIn{
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+
+            .group {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            p {
+                color: white;
+                margin-top: 20px;
+                text-align: center;
+                animation: slideRight 1.5s ease-out forwards;
+                opacity: 0;
+                margin-left: 0;
+
+            }
+            @keyframes slideRight {
+                0% {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .image {
+                display: flex;
+                width: 1050px;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-top: 80px;
+                margin-left: auto;
+                margin-right: auto;
+                flex-direction: row;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h2>This is for you^3^</h2>
+      
+        <div class="image">
+            <div class="group">
+                <a href="page1.html"><img src="Pic1.jpg"></a>
+                <p>LIGAWAN STAGE</p>
+            </div>
+        
+            <div class="group">
+                <a href="page2.html"><img src="Pic2.jpeg"></a>
+                <p>0-1st MONTHSARY</p>
+            </div>
+
+            <div class="group">
+                <a href="page3.html"><img src="Pic3.jpg"></a>
+                <p>1st-2nd MONTHSARY</p>
+            </div>
+        </div>
+    </body>
+</html>
